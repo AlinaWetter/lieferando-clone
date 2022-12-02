@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bring mal</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js"></script>
+    <link rel="icon" type="image/png" href="./img/star.png">
+</head>
+
+<body id="body" onload="renderBasket(); addDishId(); addPriceId(); addButtonId();">
+    <div class="header">
+        <img class="logo-small" src="./img/logo-small.png" alt="">
+        <span>Speisekarte</span>
+        <div class="header-right">
+            <img class="flag" src="./img/german-flag.png" alt="">
+            <img class="burger-menu" src="./img/menu.png" alt="">
+        </div>
+    </div>
+    <div class="main-section">
+        <div class="menu-section">
+            <div class="picture">
+            </div>
+            <div class="description">
+                <div class="maki-logo">
+                    <img src="./img/Logo-Maki-Maki.png" alt="">
+                </div>
+                <h2>Maki Maki</h2>
+                <div class="reviews">
+                    <div class="stars">
+                        <img src="./img/empty-star.png" alt="">
+                        <img src="./img/empty-star.png" alt="">
+                        <img src="./img/empty-star.png" alt="">
+                        <img src="./img/empty-star.png" alt="">
+                        <img src="./img/empty-star.png" alt="">
+                    </div>
+                    <a href>Bewertungen</a>
+                </div>
+                <div class="icon-section">
+                    <div class="icon-child"><img class="clock" src="./img/clock.png" alt=""><span>30-45 min</span>
+                    </div>
+                    <img src="./img/dot.png" alt="">
+                    <div class="icon-child"><img src="./img/scooter.png" alt=""><span>2.50 €</span></div>
+                    <img src="./img/dot.png" alt="">
+                    <div class="icon-child"><img src="./img/shopping-bag.png" alt=""><span>Min. 15.00 €</span></div>
+                </div>
+                <div class="highlighted-icons">
+                    <div class="icon-background-top"><img class="icon-info" src="./img/info.png" alt=""></div>
+                    <div class="icon-background-top" onclick="changeHeart()"><img id="heart" class="icon-heart" src="./img/heart.png" alt=""></div>
+                </div>
+                <span class="lighter-span">
+                    This restaurant provides stamps. To receive them via email please make sure you are
+                    subscribed to "discounts, new restaurants and special offers" at the checkout.
+                </span>
+            </div>
+            <div class="sticky-menu">
+                <div class="loupe-background">
+                    <img class="loupe" src="./img/loupe.png" alt="">
+                </div>
+                <ul>
+                    <li class="menu-element"> <a href="#popular">Popular</a></li>
+                    <li class="menu-element"> <a href="#suppen">Suppen</a></li>
+                    <li class="menu-element"> <a href="#maki">Sushi - Maki</a></li>
+                    <li class="menu-element"> <a href="#insideout">Sushi - Inside Out</a></li>
+                    <li class="menu-element"> <a href="#nigiri">Sushi - Nigiri</a></li>
+                    <li class="menu-element"> <a href="#gunkan">Sushi - Gunkan</a></li>
+                    <li class="menu-element"> <a href="#sashimi">Sushi - Sashimi</a></li>
+                    <li class="menu-element"> <a href="#beilagen">Beilagen</a></li>
+                    <li class="menu-element"> <a href="#extras">Extras</a></li>
+                    <li class="menu-element"> <a href="#drinks">Getränke</a></li>
+                </ul>
+            </div>
+            <div class="menu">
+
+                <div class="menu-sections">
+                    <div>
+                        <h3 id="popular">Popular</h3>
+                    </div>
+                    <div class="dishes">
+
+                        <div class="dish">
+                            <div class="dish-child">
+                                <div>
+                                    <h4 class="single-dish">Gyoza</h4>
+                                    <span>gefüllte Teigtaschen mit Hühnerfleisch</span>
+                                </div>
+                                <span class="single-price" type="number">5.30€</span>
+                            </div>
+                            <div class="icon-background" onclick="addDish(this.id)"><img src="./img/plus.png" alt="">
+                            </div>
+                        </div>
+
+                        <div class="dish">
+                            <div class="dish-child">
+                                <div>
+                                    <h4 class="single-dish">Inside-Out Salmon Avocado</h4>
+                                    <span>mit Lachs und Avocado</span>
+                                </div>
+                                <span class="single-price" type="number">6.80€</span>
+                            </div>
+                            <div class="icon-background" onclick="addDish(this.id)"><img src="./img/plus.png" alt="">
+                            </div>
+                        </div>
+
+                        <div class="dish">
+                            <div class="dish-child">
+                                <div>
+                                    <h4 class="single-dish">Maki Salmon</h4>
+                                    <span>mit Lachs</span>
+                                </div>
+                                <span class="single-price" type="number">6.20€</span>
+                            </div>
+                            <div class="icon-background" onclick="addDish(this.id)"><img src="./img/plus.png" alt="">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="menu-sections">
+                    <img id="suppen" src="./img/soup.jpg" alt="">
+                    <h3>Suppen</h3>
+                    <div class="dishes">
+
+                        <div class="dish">
+                            <div class="dish-child">
+                                <div>
+                                    <h4 class="single-dish">Spicy Misosuppe</h4>
+                                    <span></span>
+                                </div>
+                                <span class="single-price" type="number">2.90€</span>
+                            </div>
+                            <div class="icon-background" onclick="addDish(this.id)"><img src="./img/plus.png" alt="">
+                            </div>
+                        </div>
+
+                        <div class="dish">
+                            <div class="dish-child">
+                                <div>
+                                    <h4 class="single-dish">Misosuppe</h4>
+                                    <span></span>
+                                </div>
+                                <span class="single-price" type="number">2.80€</span>
+                            </div>
+                            <div class="icon-background" onclick="addDish(this.id)"><img src="./img/plus.png" alt="">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="menu-sections">
+                    <img id="maki" src="./img/sushi-maki.png" alt="">
+                    <h3>Sushi - Maki</h3>
+                    <div class="dishes">
+
+                        <div class="dish">
+                            <div class="dish-child">
+                                <div>
+                                    <h4 class="single-dish">Maki Salmon</h4>
+                                    <span>mit Lachs</span>
+                                </div>
+                                <span class="single-price" type="number">6.20€</span>
+                            </div>
+                            <div class="icon-background" onclick="addDish(this.id)"><img src="./img/plus.png" alt="">
+                            </div>
+                        </div>
+
+                        <div class="dish">
+                            <div class="dish-child">
+                                <div>
+                                    <h4 class="single-dish">Maki Tuna</h4>
+                                    <span>mit Thunfisch</span>
+                                </div>
+                                <span class="single-price" type="number">6.50€</span>
+                            </div>
+                            <div class="icon-background" onclick="addDish(this.id)"><img src="./img/plus.png" alt="">
+                            </div>
+                        </div>
+
+                        <div class="dish">
+                            <div class="dish-child">
+                                <div>
+                                    <h4 class="single-dish">Maki Crab</h4>
+                                    <span>mit Krabbenfleisch</span>
+                                </div>
+                                <span class="single-price" type="number">7.70€</span>
+                            </div>
+                            <div class="icon-background" onclick="addDish(this.id)"><img src="./img/plus.png" alt="">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="menu-sections">
+                    <img id="insideout" src="./img/sushi-insideout.jpg" alt="">
+                    <h3>Sushi - Inside Out</h3>
+                    <div class="dishes">
+
+                        <div class="dish">
+                            <div class="dish-child">
+                                <div>
+                                    <h4 class="single-dish">Inside-Out Salmon Avocado</h4>
+                                    <span>mit Lachs und Avocado</span>
+                                </div>
+                                <span class="single-price" type="number">6.80€</span>
+                            </div>
+                            <div class="icon-background" onclick="addDish(this.id)"><img src="./img/plus.png" alt="">
+                            </div>
+                        </div>
+
+                        <div class="dish">
+                            <div class="dish-child">
+                                <div>
+                                    <h4 class="single-dish">Inside-Out Ocean (würzig scharf)</h4>
+                                    <span>mit Thunfisch, Gurke, Masago und würzig-scharfer
+                                        Sauce</span>
+                                </div>
+                                <span class="single-price" type="number">7.50€</span>
+                            </div>
+                            <div class="icon-background" onclick="addDish(this.id)"><img src="./img/plus.png" alt="">
+                            </div>
+                        </div>
+
+                        <div class="dish">
+                            <div class="dish-child">
+                                <div>
+                                    <h4 class="single-dish">Inside-Out Surimi Avocado</h4>
+                                    <span>mit Surimi, Avocado, Masago und Mayonnaise</span>
+                                </div>
+                                <span class="single-price" type="number">6.20€</span>
+                            </div>
+                            <div class="icon-background" onclick="addDish(this.id)"><img src="./img/plus.png" alt="">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="menu-sections">
+                    <img id="nigiri" src="./img/sushi-nigiri.jpg" alt="">
+                    <h3>Sushi - Nigiri</h3>
+                    <div class="dishes">
+
+                        <div class="dish">
+                            <div class="dish-child">
+                                <div>
+                                    <h4 class="single-dish">Nigiri Salmon</h4>
+                                    <span>mit Lachs</span>
+                                </div>
+                                <span class="single-price" type="number">3.20€</span>
+                            </div>
+                            <div class="icon-background" onclick="addDish(this.id)"><img src="./img/plus.png" alt="">
+                            </div>
+                        </div>
+
+                        <div class="dish">
+                            <div class="dish-child">
+                                <div>
+                                    <h4 class="single-dish">Nigiri Unagi</h4>
+                                    <span>mit Aal</span>
+                                </div>
+                                <span class="single-price" type="number">4.10€</span>
+                            </div>
+                            <div class="icon-background" onclick="addDish(this.id)"><img src="./img/plus.png" alt="">
+                            </div>
+                        </div>
+
+                        <div class="dish">
+                            <div class="dish-child">
+                                <div>
+                                    <h4 class="single-dish">Nigiri Prawn</h4>
+                                    <span>mit Garnelen</span>
+                                </div>
+                                <span class="single-price" type="number">3.40€</span>
+                            </div>
+                            <div class="icon-background" onclick="addDish(this.id)"><img src="./img/plus.png" alt="">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="menu-sections">
+                    <img id="gunkan" src="./img/sushi-gunkan.jpg" alt="">
+                    <h3>Sushi - Gunkan</h3>
+                    <div class="dishes">
+
+                        <div class="dish">
+                            <div class="dish-child">
+                                <div>
+                                    <h4 class="single-dish">Gunkan Ikura</h4>
+                                    <span>mit Lachs-Kavier</span>
+                                </div>
+                                <span class="single-price" type="number">5.30€</span>
+                            </div>
+                            <div class="icon-background" onclick="addDish(this.id)"><img src="./img/plus.png" alt="">
+                            </div>
+                        </div>
+
+                        <div class="dish">
+                            <div class="dish-child">
+                                <div>
+                                    <h4 class="single-dish">Gunkan Saikyo Salmon</h4>
+                                    <span>mit gekochtem Lachs und Saiko-Misosauce</span>
+                                </div>
+                                <span class="single-price" type="number">4.00€</span>
+                            </div>
+                            <div class="icon-background" onclick="addDish(this.id)"><img src="./img/plus.png" alt="">
+                            </div>
+                        </div>
+
+                        <div class="dish">
+                            <div class="dish-child">
+                                <div>
+                                    <h4 class="single-dish">Gunkan Tuna (würzig-scharf)</h4>
+                                    <span>mit Thunfisch, Porree und würzig-scharfer Sauce</span>
+                                </div>
+                                <span class="single-price" type="number">6.20€</span>
+                            </div>
+                            <div class="icon-background" onclick="addDish(this.id)"><img src="./img/plus.png" alt="">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="menu-sections">
+                    <img id="sashimi" src="./img/sushi-sashimi.jpg" alt="">
+                    <h3>Sushi - Sashimi</h3>
+                    <div class="dishes">
+
+                        <div class="dish">
+                            <div class="dish-child">
+                                <div>
+                                    <h4 class="single-dish">Sashimi Salmon (10 Stück)</h4>
+                                    <span>mit Lachs</span>
+                                </div>
+                                <span class="single-price" type="number">6.20€</span>
+                            </div>
+                            <div class="icon-background" onclick="addDish(this.id)"><img src="./img/plus.png" alt="">
+                            </div>
+                        </div>
+
+                        <div class="dish">
+                            <div class="dish-child">
+                                <div>
+                                    <h4 class="single-dish">Sashimi Tuna (10 Stück)</h4>
+                                    <span>mit Thunfisch</span>
+                                </div>
+                                <span class="single-price" type="number">6.20€</span>
+                            </div>
+                            <div class="icon-background" onclick="addDish(this.id)"><img src="./img/plus.png" alt="">
+                            </div>
+                        </div>
+
+                        <div class="dish">
+                            <div class="dish-child">
+                                <div>
+                                    <h4 class="single-dish">Sashimi Salmon and Tuna (10 St</h4>
+                                    <span>mit Lachs und Thunfisch</span>
+                                </div>
+                                <span class="single-price" type="number">6.20€</span>
+                            </div>
+                            <div class="icon-background" onclick="addDish(this.id)"><img src="./img/plus.png" alt="">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="menu-sections">
+                    <img id="beilagen" src="./img/side-dishes.jpg" alt="">
+                    <h3>Beilagen</h3>
+                    <div class="dishes">
+
+                        <div class="dish">
+                            <div class="dish-child">
+                                <div>
+                                    <h4 class="single-dish">Algensalat</h4>
+                                    <span></span>
+                                </div>
+                                <span class="single-price" type="number">2.70€</span>
+                            </div>
+                            <div class="icon-background" onclick="addDish(this.id)"><img src="./img/plus.png" alt="">
+                            </div>
+                        </div>
+
+                        <div class="dish">
+                            <div class="dish-child">
+                                <div>
+                                    <h4 class="single-dish">Edamame</h4>
+                                    <span></span>
+                                </div>
+                                <span class="single-price" type="number">2.70€</span>
+                            </div>
+                            <div class="icon-background" onclick="addDish(this.id)"><img src="./img/plus.png" alt="">
+                            </div>
+                        </div>
+
+                        <div class="dish">
+                            <div class="dish-child">
+                                <div>
+                                    <h4 class="single-dish">Gyoza (5 Stück)</h4>
+                                    <span>gefüllte Teigtaschen mit Hühnerfleisch</span>
+                                </div>
+                                <span class="single-price" type="number">5.30€</span>
+                            </div>
+                            <div class="icon-background" onclick="addDish(this.id)"><img src="./img/plus.png" alt="">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="menu-sections">
+                    <img id="extras" src="./img/extras.jpg" alt="">
+                    <h3>Extras</h3>
+                    <div class="dishes">
+
+                        <div class="dish">
+                            <div class="dish-child">
+                                <div>
+                                    <h4 class="single-dish">Sojasauce</h4>
+                                    <span></span>
+                                </div>
+                                <span class="single-price" type="number">1.20€</span>
+                            </div>
+                            <div class="icon-background" onclick="addDish(this.id)"><img src="./img/plus.png" alt="">
+                            </div>
+                        </div>
+
+                        <div class="dish">
+                            <div class="dish-child">
+                                <div>
+                                    <h4 class="single-dish">Wasabi</h4>
+                                    <span></span>
+                                </div>
+                                <span class="single-price" type="number">0.50€</span>
+                            </div>
+                            <div class="icon-background" onclick="addDish(this.id)"><img src="./img/plus.png" alt="">
+                            </div>
+                        </div>
+
+                        <div class="dish">
+                            <div class="dish-child">
+                                <div>
+                                    <h4 class="single-dish">Ingwer</h4>
+                                    <span></span>
+                                </div>
+                                <span class="single-price" type="number">0.50€</span>
+                            </div>
+                            <div class="icon-background" onclick="addDish(this.id)"><img src="./img/plus.png" alt="">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="menu-sections">
+                    <img id="drinks" src="./img/drinks.jpg" alt="">
+                    <h3>Getränke</h3>
+                    <div class="dishes">
+
+                        <div class="dish">
+                            <div class="dish-child">
+                                <div>
+                                    <h4 class="single-dish">Coca-Cola 0,5l</h4>
+                                    <span></span>
+                                </div>
+                                <span class="single-price" type="number">3.00€</span>
+                            </div>
+                            <div class="icon-background" onclick="addDish(this.id)"><img src="./img/plus.png" alt="">
+                            </div>
+                        </div>
+
+                        <div class="dish">
+                            <div class="dish-child">
+                                <div>
+                                    <h4 class="single-dish">Coca-Cola light 0,5l</h4>
+                                    <span></span>
+                                </div>
+                                <span class="single-price" type="number">3.00€</span>
+                            </div>
+                            <div class="icon-background" onclick="addDish(this.id)"><img src="./img/plus.png" alt="">
+                            </div>
+                        </div>
+
+                        <div class="dish">
+                            <div class="dish-child">
+                                <div>
+                                    <h4 class="single-dish">Mezzo Mix 0,5l</h4>
+                                    <span></span>
+                                </div>
+                                <span class="single-price" type="number">3.00€</span>
+                            </div>
+                            <div class="icon-background" onclick="addDish(this.id)"><img src="./img/plus.png" alt="">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="basket-section" id="basketSection">
+            <h3>Warenkorb</h3>           
+            <div id="basket" class="basket">
+            </div>           
+        </div>
+    </div>
+    <div class="responsive-menu-bag" onclick="openResMenu()">
+        <img src="./img/shopping-bag.png" alt="">
+    </div>
+
+</body>
+
+</html>
